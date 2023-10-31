@@ -1,13 +1,20 @@
-import React from 'react';
+import React , {useState} from 'react';
+import value from "./data"
+import Question from './Components/Question';
 
 function App() {
   
+  const [datas , setDatas] = useState(value);
+
+
   return (
     <main>
       <div className='container'>
         <h3>questions and answers about login</h3>
         <section className='info'>
-          {/* data mapping */}
+         {datas.map((data) =>
+          <Question {...data} />
+         )}
         </section>
       </div>
     </main>
