@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
-
-// + or - icons
+import ShowtoggleHandler from '../HOCs/ShowtoggleHandler';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 
-const Question = ({ id, title, info }) => {
-
-  const [showInfo, setShowInfo] = useState(false);
-  
-  const showDataHandler = () => {
-    setShowInfo(!showInfo)
-  }
-
+const Question = ({ id, title, info , showInfo , showDataHandler}) => {
   return (
     <article className='question'>
       <header>
@@ -24,4 +16,4 @@ const Question = ({ id, title, info }) => {
   );
 };
 
-export default Question;
+export default ShowtoggleHandler(Question);
